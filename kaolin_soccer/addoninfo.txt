@@ -1,0 +1,9 @@
+//---------------------
+//-- Kaolin Soccer   --
+//-- Created by Fury --
+//-- aka Chris B     --
+//---------------------
+"AddonInfo"
+{
+
+}

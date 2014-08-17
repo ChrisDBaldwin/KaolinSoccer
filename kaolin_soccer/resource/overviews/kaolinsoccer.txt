@@ -1,0 +1,9 @@
+kaolinsoccer
+{
+	material materials/overviews/kaolinsoccer.vmat
+	pos_x -3066
+	pos_y 4488
+	scale 8.000
+	zoom 1.050
+}
+
