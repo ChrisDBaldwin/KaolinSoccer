@@ -5,7 +5,7 @@ USE_LOBBY=false
 THINK_TIME = 0.1
 
 STARTING_GOLD = 500--650
-MAX_LEVEL = 5
+MAX_LEVEL = 4
 
 -- Fill this table up with the required XP per level if you want to change it
 XP_PER_LEVEL_TABLE = {}

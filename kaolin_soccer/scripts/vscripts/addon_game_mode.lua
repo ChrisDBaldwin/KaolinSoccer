@@ -4,6 +4,7 @@ require('util')
 require('physics')
 require('multiteam')
 require('kaolinsoccer')
+require('kaolinsoccer_triggers')
 
 function Precache( context )
 	--[[

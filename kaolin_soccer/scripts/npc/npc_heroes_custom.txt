@@ -4,7 +4,7 @@
 "DOTAHeroes"
 {
 	//=================================================================================================================
-	// HERO: Earth Spirit
+	// HERO: Kaolin The Soccer Star
 	//=================================================================================================================
 	"npc_dota_hero_kaolin_soccer"
 	{
@@ -12,13 +12,13 @@
 		
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"4"
 		"Ability1"					"kaolin_soccer_boulder_smash_short"			// Ability 1
 		"Ability2"					"kaolin_soccer_boulder_smash_long"			// Ability 2
-		"Ability3"					""											// Ability 3
-		"Ability4"					"earth_spirit_stone_caller"					// Ability 4
+		"Ability3"					"dark_seer_surge"							// Ability 3
+		"Ability4"					"kaolin_soccer_stone_caller"				// Ability 4
 		"Ability5"					""											// Ability 5
-		"Ability6"					"attribute_bonus"
-		"AbilityLayout"				"5"
+		
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
