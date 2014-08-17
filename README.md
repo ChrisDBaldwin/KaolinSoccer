@@ -1,4 +1,5 @@
-KaolinSoccer
+KaolinSoccer 
+Current Version: v0.00.00.01
 ============
 
 A Dota 2 Mod made by Chris Baldwin | Fury | /u/FuryDota
