@@ -3,32 +3,28 @@
 {
 	"Version"	"1"
   
-  "npc_dummy_unit"
+  	"npc_dummy_unit"
 	{
 		// General
-		//
+
 		"BaseClass"					"npc_dota_base_additive"	// Class of entity of link to.
 		"Model"						"models/development/invisiblebox.mdl"	// Model.
 		"SoundSet"					"Creep_Good_Range"					// Name of sound set.
 		"Level"						"0"
 		"UnitLabel"					"healing_ward"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		
-		"Ability1"					"reflex_dummy_unit"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+
+		"Ability1"					"kaolin_soccer_stone_caller"		// Ability 1.
+		"Ability2"					""									// Ability 2.
+		"Ability3"					""									// Ability 3.
+		"Ability4"					""									// Ability 4.
 
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"				"0"			// Magical protection.
+		"MagicalResistance"			"0"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -65,9 +61,9 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 		"MovementSpeed"				"450"		// Speed
-		"MovementTurnRate"			"1.0"		// Turning rate.
+		"MovementTurnRate"			"10"		// Turning rate.
 		"FollowRange"				"250"		// Distance to keep when following
 
 		// Status
@@ -93,6 +89,7 @@
 		//----------------------------------------------------------------
 		"AttackDesire"				"1.5"		// How much bots want to attack them vs other non-hero things
 	}	
+
 
   
   //------------------------------------------------------------------------------------
@@ -239,7 +236,7 @@
 			//"particlefile"				"particles/units/heroes/hero_elder_titan.pcf"
 			//"particlefile"				"particles/units/heroes/hero_legion_commander.pcf"
 			//"particlefile"				"particles/units/heroes/hero_ember_spirit.pcf"
-			//"particlefile"				"particles/units/heroes/hero_earth_spirit.pcf"
+			"particlefile"				"particles/units/heroes/hero_earth_spirit.pcf"
 			//"particlefile"				"particles/units/heroes/hero_abyssal_underlord.pcf"
 			//"particlefile"				"particles/units/heroes/hero_terrorblade.pcf"
 			//"particlefile"				"particles/units/heroes/hero_phoenix.pcf"
@@ -350,7 +347,7 @@
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_elder_titan.txt"
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_legion_commander.txt"
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_ember_spirit.txt"
-			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_earth_spirit.txt"
+			"soundfile"				"scripts/game_sounds_heroes/game_sounds_earth_spirit.txt"
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_abyssal_underlord.txt"
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_terrorblade.txt"
 			//"soundfile"				"scripts/game_sounds_heroes/game_sounds_phoenix.txt"
