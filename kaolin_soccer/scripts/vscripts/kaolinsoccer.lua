@@ -157,6 +157,7 @@ function KaolinSoccerGameMode:CaptureGameMode()
         GameMode:SetCustomBuybackCostEnabled( true )
         GameMode:SetCustomBuybackCooldownEnabled( true )
         GameMode:SetBuybackEnabled( false )
+        GameMode:SetRecommendedItemsDisabled( false )
         -- Override the top bar values to show your own settings instead of total deaths
         GameMode:SetTopBarTeamValuesOverride ( true )
         -- Use custom hero level maximum and your own XP per level
