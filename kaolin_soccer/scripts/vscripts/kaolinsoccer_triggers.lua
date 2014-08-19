@@ -1,7 +1,7 @@
 -- Cool this is where I'll have goals triggered and stuff
 
 function OnStartTouch(trigger)
-	print("[Kaolin Soccer] Trigger!")
+	print("[Kaolin Soccer] Trigger Goal!")
 
 	local unit = trigger.activator:GetUnitName()
 	local side = trigger.caller:GetName()
@@ -23,5 +23,18 @@ function OnStartTouch(trigger)
 		SpawnStone()
 	end
 
+	trigger.activator:ForceKill( true )
+end
+
+
+function OutOfBounds(trigger)
+	print("[Kaolin Soccer] Trigger Out of Bounds")
+
+	local unit = trigger.activator:GetUnitName()
+	local health = trigger.activator:GetHealth()
+
+	if health == 100 and unit == 'npc_dota_earth_spirit_stone' then
+		SpawnStone()
+	end
 	trigger.activator:ForceKill( true )
 end

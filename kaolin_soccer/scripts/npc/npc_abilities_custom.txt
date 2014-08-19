@@ -62,7 +62,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rock_distance"			"400.0"
+				"rock_distance"			"400"
 			}
 			"07"
 			{

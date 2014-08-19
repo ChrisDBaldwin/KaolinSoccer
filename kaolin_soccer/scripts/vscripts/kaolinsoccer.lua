@@ -576,7 +576,7 @@ function KaolinSoccerGameMode:GoalScored( team )
 
 end
 
-
+-- This spawns a dummy that can cast stone caller
 function SpawnDummy()
     print('[KaolinSoccer] Spawning dummy')
 
@@ -587,7 +587,7 @@ function SpawnDummy()
 
 end
 
-
+-- This has the dummy cast stone caller at the center of the soccer field
 function SpawnStone()
     print('[KaolinSoccer] Spawning stone')
 
