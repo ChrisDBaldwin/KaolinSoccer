@@ -30,5 +30,8 @@ Current Version: v0.00.04
 
 A work in progress Dota 2 Mod made by Chris Baldwin | Fury | /u/FuryDota
 
+Contact: Chrisdbaldwin@gmail.com
+
 Special shout outs to BMD for making BareBones, which I am using as a base. 
-Shout outs to CyborgMatt and BMD (again) for making InvokerWars and Reflex. They are very useful references.
+
+Shout outs to /r/Dota2Modding, BMD, #dota2mods, #dota2modhelpdesk
