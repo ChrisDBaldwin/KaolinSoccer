@@ -27,6 +27,10 @@ Current Version: v0.0.4
 
 -Add a win condition -- probably first to 10 or 15 points
 
+-Create tooltip for abilities
+
+-Add a game description upon loading into the game
+
 
 
 A work in progress Dota 2 Mod made by Chris Baldwin | Fury | /u/FuryDota
