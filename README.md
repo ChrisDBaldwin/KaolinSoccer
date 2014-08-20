@@ -21,10 +21,11 @@ Current Version: v0.0.4
 
 -Change the stone remnant ball into a working model that isn't just a wireframe
 
--Design and Create some new abilties
+-Design and create some new abilties
 
 -Auto-level all of the player's abilities for them
 
+-Add a win condition -- probably first to 10 or 15 points
 
 
 
