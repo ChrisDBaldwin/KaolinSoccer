@@ -63,6 +63,8 @@ function KaolinSoccerGameMode:InitGameMode()
     --ListenToGameEvent('player_info', Dynamic_Wrap(KaolinSoccerGameMode, 'PlayerInfo'), self)
     ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(KaolinSoccerGameMode, 'AbilityUsed'), self)
     ListenToGameEvent('npc_spawned', Dynamic_Wrap(KaolinSoccerGameMode, 'OnNPCSpawned'), self)
+    ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( KaolinSoccerGameMode, "OnGameRulesStateChange" ), self )
+
 
     Convars:RegisterCommand( "command_example", Dynamic_Wrap(KaolinSoccerGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
     
@@ -117,6 +119,9 @@ function KaolinSoccerGameMode:InitGameMode()
     -- scoreboard
     self.nRadiantScore = 0
     self.nDireScore = 0
+
+    -- points needed to win
+    self.points_to_win = 15
 
     -- timers
     self.timers = {}
@@ -568,12 +573,19 @@ function KaolinSoccerGameMode:GoalScored( team )
 
         if team == 'radiant' then
                 self.nRadiantScore = self.nRadiantScore + 1
+                GameMode:SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantScore )
+                if self.nRadiantScore >= self.points_to_win then
+                    GameRules:SetSafeToLeave(true)
+                    GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS)
+                end
         elseif team == 'dire' then
                 self.nDireScore = self.nDireScore + 1
+                GameMode:SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireScore )
+                if self.nDireScore >= self.points_to_win then
+                    GameRules:SetSafeToLeave(true)
+                    GameRules:SetGameWinner( DOTA_TEAM_BADGUYS)
+                end
         end
-
-        GameMode:SetTopBarTeamValue ( DOTA_TEAM_BADGUYS, self.nDireScore )
-        GameMode:SetTopBarTeamValue ( DOTA_TEAM_GOODGUYS, self.nRadiantScore )
 
 end
 
@@ -604,19 +616,27 @@ function SpawnStone()
 
 end
 
--- Start players at level 4 
--- TODO: Level the abilities
+-- Sets the player up with usable abilities and removes the level 1 ability point
 function KaolinSoccerGameMode:OnNPCSpawned( keys )
     print ( '[KaolinSoccer] OnNPCSpawned' )
 
     local spawnedUnit = EntIndexToHScript( keys.entindex )
 
     if spawnedUnit:IsHero() then
-        local level = spawnedUnit:GetLevel()
+        spawnedUnit:SetAbilityPoints(0)
+        spawnedUnit:GetAbilityByIndex(0):SetLevel(1)
+        spawnedUnit:GetAbilityByIndex(1):SetLevel(1)
+        spawnedUnit:GetAbilityByIndex(2):SetLevel(1)
+        spawnedUnit:GetAbilityByIndex(3):SetLevel(1)
 
-        while level < 4 do
-            spawnedUnit:AddExperience (1000,false)
-            level = spawnedUnit:GetLevel()
-        end
+    end
+end
+
+-- Pregame welcome message (compliments of invoker wars; thanks Matt)
+function KaolinSoccerGameMode:OnGameRulesStateChange()
+    local nNewState = GameRules:State_Get()
+    if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
+        print( "[Kaolin Soccer] Gamemode is running." )
+        ShowGenericPopup( "#kaolin_soccer_instructions_title", "#kaolin_soccer_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
     end
 end

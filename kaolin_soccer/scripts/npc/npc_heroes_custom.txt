@@ -46,7 +46,7 @@
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"355"									// Speed.
+		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
 		// Vision
