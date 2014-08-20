@@ -4,7 +4,7 @@ DEBUG=true
 USE_LOBBY=false
 THINK_TIME = 0.1
 
-STARTING_GOLD = 500--650
+STARTING_GOLD = 0
 MAX_LEVEL = 4
 
 -- Fill this table up with the required XP per level if you want to change it
@@ -594,15 +594,18 @@ function SpawnStone()
 
     local stoneSpawn = Entities:FindByName(nil, "stone_spawn_loc")
     
-    print(stoneSpawn:GetAbsOrigin())
-
-    print(stone_dummy:FindAbilityByName('kaolin_soccer_stone_caller'))
+    --print(stoneSpawn:GetAbsOrigin())
+    --print(stone_dummy:FindAbilityByName('kaolin_soccer_stone_caller'))
 
     stone_dummy:CastAbilityOnTarget(stoneSpawn, stone_dummy:FindAbilityByName('kaolin_soccer_stone_caller'), 0)
+    
+    --TODO: Fix the ball model
+    --stone_dummy:CastAbilityOnTarget(Entities:FindByName(nil, "test_spawn_loc"), stone_dummy:FindAbilityByName('kaolin_soccer_test'), 0)
 
 end
 
--- Start players at level 4
+-- Start players at level 4 
+-- TODO: Level the abilities
 function KaolinSoccerGameMode:OnNPCSpawned( keys )
     print ( '[KaolinSoccer] OnNPCSpawned' )
 

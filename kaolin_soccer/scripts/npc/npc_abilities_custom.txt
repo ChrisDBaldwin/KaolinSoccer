@@ -57,12 +57,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"unit_distance"			"400"
+				"unit_distance"			"600"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rock_distance"			"400"
+				"rock_distance"			"600"
 			}
 			"07"
 			{
@@ -141,7 +141,7 @@
 	}
 
 	//=================================================================================================================
-	// Kaolin Soccer: Stone Caller - Creates Stone Remnant for the dummy
+	// Kaolin Soccer: Stone Caller - Creates Stone Remnant spell for the dummy
 	//=================================================================================================================
 	"kaolin_soccer_stone_caller"
 	{
@@ -207,7 +207,7 @@
 		"BaseClass"						"earth_spirit_geomagnetic_grip"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1100"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.01"
 		
 		// Time		
@@ -245,12 +245,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pull_units_per_second"		"1000"
+				"pull_units_per_second"		"600"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_pull_distance"		"1000"
+				"total_pull_distance"		"600"
 			}
 			"07"
 			{
@@ -319,6 +319,68 @@
 				"var_type"			"FIELD_INTEGER"
 				"leap_speedbonus_as"	"0"
 			}
+		}
+	}
+
+	//=================================================================================================================
+	// Kaolin Soccer: testing a datadriven way to replace stone caller's remnant with a legit ball
+	//=================================================================================================================
+	"kaolin_soccer_test"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000000"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// DataDriven Spell Stuff
+		//-------------------------------------------------------------------------------------------------------------
+		"OnSpellStart"
+		{
+			"SpawnUnit"	
+			{
+				"UnitName"					"kaolin_soccer_ball"
+				"UnitCount"					"1"
+				"Target"					"POINT"
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"		"modifier_ball"
+						"Target" 			"TARGET"
+					}
+				}
+
+				"Modifiers"
+				{  						 
+					"modifier_ball"
+					{
+						"States"
+						{
+							"MODIFIER_STATE_INVULNERABLE"		    "MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_NO_HEALTH_BAR"		    "MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
+						}
+					}
+				}
+
+			}			
 		}
 	}
 }

@@ -17,6 +17,7 @@ function Precache( context )
 		PrecacheUnitByNameAsync( "npc_dota_earth_spirit_stone", context)
     	PrecacheResource( "soundfile", "*.vsndevts", context )
     	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
+    	PrecacheResource("model", "models/particle/meteor.mdl", context)
 		PrecacheUnitByNameSync('npc_precache_everything', context)
 end
 
