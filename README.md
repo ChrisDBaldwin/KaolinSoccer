@@ -1,5 +1,5 @@
 KaolinSoccer
-Current Version: v0.00.04
+Current Version: v0.0.4
 =========================
 
 ----Recent Updates----
