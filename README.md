@@ -1,5 +1,5 @@
 KaolinSoccer
-Current Version: v0.0.4
+Current Version: v0.0.5
 =========================
 
 ----Recent Updates----
@@ -14,6 +14,14 @@ Current Version: v0.0.4
 
 -Fixed the Addon name, should now show up as Kaolin Soccer
 
+-Players now start with all abilities leveled
+
+-Added a win condition -- first team to 15 points wins
+
+-Create tooltips for the abilities
+
+-Added a game description upon choosing a hero
+
 
 -------To Do List------
   
@@ -22,14 +30,6 @@ Current Version: v0.0.4
 -Change the stone remnant ball into a working model that isn't just a wireframe
 
 -Design and create some new abilties
-
--Auto-level all of the player's abilities for them
-
--Add a win condition -- probably first to 10 or 15 points
-
--Create tooltip for abilities
-
--Add a game description upon loading into the game
 
 
 
