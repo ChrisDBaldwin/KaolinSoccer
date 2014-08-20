@@ -23,6 +23,8 @@ Current Version: v0.00.04
 
 -Design and Create some new abilties
 
+-Auto-level all of the player's abilities for them
+
 
 
 
