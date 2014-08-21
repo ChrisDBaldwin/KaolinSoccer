@@ -628,8 +628,12 @@ function KaolinSoccerGameMode:OnNPCSpawned( keys )
         spawnedUnit:GetAbilityByIndex(1):SetLevel(1)
         spawnedUnit:GetAbilityByIndex(2):SetLevel(1)
         spawnedUnit:GetAbilityByIndex(3):SetLevel(1)
-
     end
+
+    if spawnedUnit:IsHero() then
+        spawnedUnit:SetGold(0, false)
+    end
+
 end
 
 -- Pregame welcome message (compliments of invoker wars; thanks Matt)
