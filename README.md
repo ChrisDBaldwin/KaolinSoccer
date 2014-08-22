@@ -1,33 +1,17 @@
 KaolinSoccer
-Current Version: v0.0.5
+Current Version: v0.0.6
 =========================
 
 ----Recent Updates----
 
--Removed Damage from abilities and reduced Earth Spirit's damage to 1.
-
--Removed Items from the shop list, though players can stil purchase from suggested items
-
--Added a larger barrier so that players can't accidentally leave the play space
-
--Nerfed the range on grip
-
--Fixed the Addon name, should now show up as Kaolin Soccer
-
--Players now start with all abilities leveled
-
--Added a win condition -- first team to 15 points wins
-
--Create tooltips for the abilities
-
--Added a game description upon choosing a hero
+-Removed starting gold
 
 
 -------To Do List------
-  
--Remove the shop / Remove all starting gold
 
 -Change the stone remnant ball into a working model that isn't just a wireframe
+
+-Create goal indication
 
 -Design and create some new abilties
 
