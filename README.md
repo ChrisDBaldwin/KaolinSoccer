@@ -6,18 +6,23 @@ Current Version: v0.0.6
 
 -Removed starting gold
 
+-Changed the ball into a stone remnant model, only downside is that it is no longer treated as a stone remnant
+
+-Removed Grip (due to problems with new ball model) and replaced it with a custom rolling boulder ability
+
+-Added a particle effect when goals are scored
+
+-Added a particle effect when the ball goes outside of the arena
+
 
 -------To Do List------
 
--Change the stone remnant ball into a working model that isn't just a wireframe
+-Create goal indication sound
 
--Create goal indication
-
--Design and create some new abilties
+-Design and create some new heroes and sponsorship abilties
 
 
-
-A work in progress Dota 2 Mod made by Chris Baldwin | Fury | /u/FuryDota
+A work in progress Dota 2 Mod made by Chris "Fury" Baldwin with help from Tom Wisneski
 
 Contact: Chrisdbaldwin@gmail.com
 
