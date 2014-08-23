@@ -15,20 +15,21 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"kaolin_soccer_boulder_smash_short"			// Ability 1
 		"Ability2"					"kaolin_soccer_boulder_smash_long"			// Ability 2
-		"Ability3"					"kaolin_soccer_grip"						// Ability 3
+		"Ability3"					"kaolin_soccer_rolling_boulder"				// Ability 3
 		"Ability4"					"kaolin_soccer_leap"						// Ability 4
-		"Ability5"					""											// Ability 5
+		"Ability5"					""
+		"Ability6"					""
 		
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1.0"								// Physical protection.
+		"ArmorPhysical"				"1.0"									// Physical protection.
 
 		// Attack
 		//-------------------------------------------------------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"0"									// Damage range min.
-		"AttackDamageMax"			"0"									// Damage range max.
+		"AttackDamageMin"			"0"										// Damage range min.
+		"AttackDamageMax"			"0"										// Damage range max.
 		"AttackRate"				"1.7"									// Speed of attack.
 		"AttackAnimationPoint"		"0.35"									// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
@@ -39,10 +40,10 @@
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"			"0"									// Base strength
 		"AttributeStrengthGain"			"0"									// Strength bonus per level.
-		"AttributeBaseAgility"			"17"									// Base agility
+		"AttributeBaseAgility"			"17"								// Base agility
 		"AttributeAgilityGain"			"0"									// Agility bonus per level.
-		"AttributeBaseIntelligence"		"20"									// Base intelligence
-		"AttributeIntelligenceGain"		"1.1"									// Intelligence bonus per level.
+		"AttributeBaseIntelligence"		"20"								// Base intelligence
+		"AttributeIntelligenceGain"		"1.1"								// Intelligence bonus per level.
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------

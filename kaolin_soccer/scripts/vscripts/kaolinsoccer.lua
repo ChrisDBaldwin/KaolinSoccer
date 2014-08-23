@@ -144,8 +144,8 @@ function KaolinSoccerGameMode:InitGameMode()
 
     print('[KaolinSoccer] Done precaching!') 
 
-    -- Spawn Dummy
-    SpawnDummy()
+    -- Spawn Ball
+    SpawnBall()
 
     print('[KaolinSoccer] Done loading KaolinSoccer gamemode!\n\n')
 end
@@ -190,6 +190,9 @@ end
 function KaolinSoccerGameMode:AbilityUsed(keys)
     print('[KaolinSoccer] AbilityUsed')
     PrintTable(keys)
+
+
+
 end
 
 -- Cleanup a player when they leave
@@ -590,6 +593,7 @@ function KaolinSoccerGameMode:GoalScored( team )
 end
 
 -- This spawns a dummy that can cast stone caller
+--[[ DEPRICATED
 function SpawnDummy()
     print('[KaolinSoccer] Spawning dummy')
 
@@ -599,8 +603,22 @@ function SpawnDummy()
     SpawnStone()
 
 end
+]]
+
+-- This spawns the ball
+function SpawnBall()
+    print('[KaolinSoccer] Spawning ball')
+
+    local ballLocation = Entities:FindByName(nil, "ball_spawn_loc")
+    ball = CreateUnitByName("kaolin_soccer_ball", ballLocation:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_NEUTRALS) 
+    --ToDo: Give the ball a cool particle effect
+    --ParticleManager:CreateParticle("", 1, ball)
+    ball:GetAbilityByIndex(0):SetLevel(1)
+
+end
 
 -- This has the dummy cast stone caller at the center of the soccer field
+--[[ DEPRICATED
 function SpawnStone()
     print('[KaolinSoccer] Spawning stone')
 
@@ -611,10 +629,9 @@ function SpawnStone()
 
     stone_dummy:CastAbilityOnTarget(stoneSpawn, stone_dummy:FindAbilityByName('kaolin_soccer_stone_caller'), 0)
     
-    --TODO: Fix the ball model
     --stone_dummy:CastAbilityOnTarget(Entities:FindByName(nil, "test_spawn_loc"), stone_dummy:FindAbilityByName('kaolin_soccer_test'), 0)
-
 end
+]]
 
 -- Sets the player up with usable abilities and removes the level 1 ability point
 function KaolinSoccerGameMode:OnNPCSpawned( keys )

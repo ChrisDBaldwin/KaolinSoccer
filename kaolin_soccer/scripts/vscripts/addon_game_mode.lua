@@ -17,7 +17,10 @@ function Precache( context )
 		PrecacheUnitByNameAsync( "npc_dota_earth_spirit_stone", context)
     	PrecacheResource( "soundfile", "*.vsndevts", context )
     	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
-    	PrecacheResource("model", "models/particle/meteor.mdl", context)
+    	PrecacheResource("model", "models/stonesummon.mdl", context)
+    	PrecacheResource("model", "models/development/invisiblebox.vmdl", context)
+    	PrecacheResource("particles", "particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf", context)
+    	PrecacheUnitByNameSync("kaolin_soccer_ball", context)
 		PrecacheUnitByNameSync('npc_precache_everything', context)
 end
 

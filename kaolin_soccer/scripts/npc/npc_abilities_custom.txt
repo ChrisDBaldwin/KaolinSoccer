@@ -190,33 +190,31 @@
 	}
 
 	//=================================================================================================================
-	// Kaolin Soccer: Grip
+	// Kaolin Soccer: Rolling Boulder
 	//=================================================================================================================
-	"kaolin_soccer_grip"
+	"kaolin_soccer_rolling_boulder"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		//"ID"							"5610"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		//"ID"							"5609"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"FightRecapLevel"				"1"
+		"BaseClass"						"earth_spirit_rolling_boulder"
 		"MaxLevel"						"1"
-		"BaseClass"						"earth_spirit_geomagnetic_grip"
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"3000"
 		"AbilityCastPoint"				"0.01"
-		
+
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12.0"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -225,38 +223,59 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"180"
+				"radius"				"150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rock_damage"			"0"
+				"speed"					"1200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000"
+				"rock_speed"			"1600"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"				"1.0"
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"0"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"pull_units_per_second"		"600"
+				"var_type"				"FIELD_INTEGER"
+				"rock_damage"			"0"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_pull_distance"		"600"
+				"distance"				"800.0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"silence_duration"		"0"
+				"rock_distance"			"1600.0"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.6"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_slow"				"80"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_slow"			"80"
+			}
+			
 		}
 	}
 
@@ -270,6 +289,7 @@
 		//"ID"						"5050"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"BaseClass"						"mirana_leap"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -323,64 +343,115 @@
 	}
 
 	//=================================================================================================================
-	// Kaolin Soccer: testing a datadriven way to replace stone caller's remnant with a legit ball
+	// Kaolin Soccer: Ball Passive
 	//=================================================================================================================
-	"kaolin_soccer_test"
+	"kaolin_soccer_ball_passive"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"            "earth_spirit_stone_caller"
+
+		// DataDriven Spell Stuff
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"Modifiers"
+    	{
+	        "NoHealthBar"
+	        {
+	            "Passive"                       "1"
+	            "States"
+	           	{
+					"MODIFIER_STATE_NO_HEALTH_BAR"		    "MODIFIER_STATE_VALUE_ENABLED"
+		           	"MODIFIER_STATE_ATTACK_IMMUNE"		    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+    	}
+	}
+
+	//=================================================================================================================
+	// Kaolin Soccer: DataDriven Grip
+	//=================================================================================================================
+	"kaolin_soccer_dd_grip"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"1"
-
-
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000000"
-		"AbilityCastPoint"				"0.0"
-
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.01"
+		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0.0"
+		"AbilityCooldown"				"12.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
-		// DataDriven Spell Stuff
-		//-------------------------------------------------------------------------------------------------------------
+		//DataDriven Spell Stuff
+		//--------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{
-			"SpawnUnit"	
+			"Knockback"
 			{
-				"UnitName"					"kaolin_soccer_ball"
-				"UnitCount"					"1"
-				"Target"					"POINT"
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"		"modifier_ball"
-						"Target" 			"TARGET"
-					}
-				}
+				"Target"			"TARGET"
+				"Center"			""
+				"Duration"			""
+				"Distance"			"%total_pull_distance"
+				"IsFixedDistance"	"1"
+				"ShouldStun"		"0"
+			}
+		}
 
-				"Modifiers"
-				{  						 
-					"modifier_ball"
-					{
-						"States"
-						{
-							"MODIFIER_STATE_INVULNERABLE"		    "MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_NO_HEALTH_BAR"		    "MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
-						}
-					}
-				}
-
-			}			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"180"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rock_damage"			"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"				"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_units_per_second"		"1200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_pull_distance"		"600"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_duration"		"0"
+			}
 		}
 	}
 }
