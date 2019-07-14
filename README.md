@@ -29,7 +29,7 @@ Current Version: v0.0.5
 
 -Change the stone remnant ball into a working model that isn't just a wireframe
 
--Design and create some new abilties
+-Design and create some new abilities
 
 
 
